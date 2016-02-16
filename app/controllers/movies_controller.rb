@@ -2,7 +2,7 @@ class MoviesController < ApplicationController
   
   
   def index
-    
+    session[:sort] = nil
     if params[:sort]
       if params[:sort] == "title"
         @movies = Movie.order(:title)
