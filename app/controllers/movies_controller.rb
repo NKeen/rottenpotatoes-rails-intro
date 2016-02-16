@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-  @all_ratings = Movie.possible_ratings
+  @all_ratings = Movie.uniq.pluck(:rating)
   
   def index
     session[:sort] = nil
