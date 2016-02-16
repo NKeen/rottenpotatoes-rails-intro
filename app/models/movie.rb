@@ -1,4 +1,4 @@
 class Movie < ActiveRecord::Base
     def possible_ratings
-        return uniq.pluck(:rating)
+        return Movie.uniq.pluck(:rating)
 end
