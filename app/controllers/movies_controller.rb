@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-  
+  @all_ratings = Movie.possible_ratings
   
   def index
     session[:sort] = nil
