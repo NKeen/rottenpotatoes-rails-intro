@@ -1,15 +1,21 @@
 class MoviesController < ApplicationController
-  
+  @headerhilite = None
   
   def index
     @movies = Movie.all
     if params[:sort]
       if params[:sort] == "title"
         @movies = Movie.order(:title)
+        @headerhilite = "title"
       elsif params[:sort] == "release_date"
         @movies = Movie.order(:release_date)
+        @headerhilite = "release_date"
       end
     end
+  end
+  
+  def headercheck
+    return @headerhilite
   end
   
   def movie_params

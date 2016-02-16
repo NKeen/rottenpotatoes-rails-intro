@@ -4,9 +4,9 @@
 %table#movies
   %thead
     %tr
-      %th{:class => @title_header}= link_to "Movie Title", movies_path(@get, :sort => 'title'), {:id => 'title_header'}, onclick: "$(this).css('background-color', 'yellow')"
+      %th{:class => @title_header}= link_to "Movie Title", :onclick => "headercheck(); return "title", movies_path(@get, :sort => 'title'), {:id => 'title_header'}
       %th Rating
-      %th{:class => @release_date_header}= link_to "Release Date", movies_path(@get, :sort => 'release_date'), {:id => 'release_date_header'}, onclick: "$(this).css('background-color', 'yellow')"
+      %th{:class => @release_date_header}= link_to "Release Date", :onclick => "headercheck(); return "release_date", movies_path(@get, :sort => 'release_date'), {:id => 'release_date_header'}
       %th More Info
       
   %tbody
